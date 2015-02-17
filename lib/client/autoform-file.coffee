@@ -64,7 +64,7 @@ Template.afFileUpload.events
 		files = e.target.files
 
 		collection = getCollection(t.data)
-		collection.insert files[0], (err, fileObj) ->
+		collection.insert files[0], (err, fileObj) ->	
 			if err
 				console.log err
 			else
@@ -81,6 +81,8 @@ Template.afFileUpload.events
 		Session.set 'fileUpload[' + name + ']', 'delete-file'
 
 Template.afFileUpload.helpers
+
+
 	collection: ->
 		getCollection(@)
 	label: ->
@@ -88,7 +90,7 @@ Template.afFileUpload.helpers
 	fileUploadAtts: ->
 		atts = _.clone(this.atts)
 		delete atts.collection
-		atts
+		atts	
 	fileUpload: ->
 		af = Template.parentData(1)._af
 		# Template.parentData(4).value
