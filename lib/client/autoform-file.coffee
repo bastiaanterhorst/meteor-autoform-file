@@ -154,3 +154,7 @@ Template.afFileUpload.helpers
 			doc
 		else
 			null
+
+Template.fileThumbImg.helpers
+	hasUrl: ->
+		(@src?.length > 1)

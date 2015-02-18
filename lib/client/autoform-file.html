@@ -28,5 +28,15 @@
 </template>
 
 <template name="fileThumbImg">
-	<img src="{{src}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded">
+	{{#if hasUrl}}
+		<img src="{{src}}" alt="" class="img-fileUpload-thumbnail img-thumbnail img-rounded">
+	{{else}}
+    <label class="file-picker">
+      <div class="label">
+        <span class="ss-icon">upload</span>
+        <br>
+        <span class="label-text">Processing</span>
+      </div>
+    </label>
+	{{/if}}
 </template>
